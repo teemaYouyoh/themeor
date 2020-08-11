@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import lightTheme from './theme-light.json';
+import darkTheme from './theme-dark.json';
+import { Theme, Box, Font, Align } from 'themeor';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Theme config={[lightTheme, darkTheme]}>
+      <Align vert="center" hor="center">
+        <Box fill="base">
+          <Align vert="center" hor="center">
+            <Font fill="base" size="x3l" weight="700">
+              API TEST
+            </Font>
+          </Align>
+        </Box>
+      </Align>
+    </Theme>
   );
 }
 
